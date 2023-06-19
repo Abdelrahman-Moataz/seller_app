@@ -1,10 +1,24 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/controllers/profile_controller.dart';
 
 import '../../widgets/custom_textfield.dart';
 import '../../widgets/text_style.dart';
 
-class EditProfileScreen extends StatelessWidget {
-  const EditProfileScreen({Key? key}) : super(key: key);
+class EditProfileScreen extends StatefulWidget {
+  final String? userName;
+  const EditProfileScreen({Key? key, this.userName}) : super(key: key);
+
+  @override
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
+}
+
+class _EditProfileScreenState extends State<EditProfileScreen> {
+  var controller = Get.find<ProfileController>();
+  @override
+  void initState() {
+    controller.nameController.text = widget.userName!;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +55,24 @@ class EditProfileScreen extends StatelessWidget {
             const Divider(
               color: white,
             ),
-            customTextField(label: name, hint: "Type your name"),
+            Align(
+                alignment: Alignment.centerLeft,
+                child: boldText(text: "Change your Password")),
             10.heightBox,
-            customTextField(label: password, hint: passwordHint),
+            customTextField(
+                label: name,
+                hint: "Type your name",
+                controller: controller.nameController),
             10.heightBox,
-            customTextField(label: confirmPassword, hint: passwordHint),
+            customTextField(
+                label: password,
+                hint: passwordHint,
+                controller: controller.oldPassController),
+            10.heightBox,
+            customTextField(
+                label: confirmPassword,
+                hint: passwordHint,
+                controller: controller.newPassController),
           ],
         ),
       ),

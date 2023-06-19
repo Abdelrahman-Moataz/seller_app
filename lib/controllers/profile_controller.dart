@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 
 class ProfileController extends GetxController {
+  late QueryDocumentSnapshot snapshotData;
   var profileImPath = ''.obs;
   var profileImageLink = '';
   var isLoading = false.obs;
@@ -36,7 +37,7 @@ class ProfileController extends GetxController {
   }
 
   updateProfile({name, password, imgUrl}) async {
-    var store = fireStore.collection('users').doc(currentUser!.uid);
+    var store = fireStore.collection(vendorsCollection).doc(currentUser!.uid);
     await store.set({
       'name': name,
       'password': password,
@@ -46,7 +47,7 @@ class ProfileController extends GetxController {
   }
 
   updateProfileName({name}) async {
-    var store = fireStore.collection('users').doc(currentUser!.uid);
+    var store = fireStore.collection(vendorsCollection).doc(currentUser!.uid);
     await store.set({
       'name': name,
     }, SetOptions(merge: true));
@@ -54,7 +55,7 @@ class ProfileController extends GetxController {
   }
 
   updateProfileImage({imgUrl}) async {
-    var store = fireStore.collection('users').doc(currentUser!.uid);
+    var store = fireStore.collection(vendorsCollection).doc(currentUser!.uid);
     await store.set({
       'imageUrl': imgUrl,
     }, SetOptions(merge: true));

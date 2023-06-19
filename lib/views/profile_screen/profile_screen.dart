@@ -1,5 +1,6 @@
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/controllers/auth_controller.dart';
+import 'package:emart_seller/controllers/profile_controller.dart';
 import 'package:emart_seller/services/store_services.dart';
 import 'package:emart_seller/views/auth_screen/login_screen.dart';
 import 'package:emart_seller/views/messages_screen/messages_screen.dart';
@@ -13,6 +14,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProfileController());
     return Scaffold(
         backgroundColor: purpleColor,
         appBar: AppBar(
@@ -41,7 +43,7 @@ class ProfileScreen extends StatelessWidget {
             if (!snapshot.hasData) {
               return loadingIndicator();
             } else {
-              var data = snapshot.data!.docs[0];
+              controller.snapshotData = snapshot.data!.docs[0];
               return Column(
                 children: [
                   ListTile(
@@ -50,8 +52,10 @@ class ProfileScreen extends StatelessWidget {
                         .roundedFull
                         .clip(Clip.antiAlias)
                         .make(),
-                    title: boldText(text: "${data['vendor_name']}"),
-                    subtitle: normalText(text: "${data['email']}"),
+                    title: boldText(
+                        text: "${controller.snapshotData['vendor_name']}"),
+                    subtitle:
+                        normalText(text: "${controller.snapshotData['email']}"),
                   ),
                   const Divider(),
                   10.heightBox,
