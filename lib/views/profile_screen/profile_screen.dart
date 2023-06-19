@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
                         .clip(Clip.antiAlias)
                         .make(),
                     title: boldText(text: "${data['vendor_name']}"),
-                    subtitle: normalText(text: "VendorEmail@emart.com"),
+                    subtitle: normalText(text: "${data['email']}"),
                   ),
                   const Divider(),
                   10.heightBox,
