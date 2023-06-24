@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "name": "Super Market",
+      "subcategory": [
+        "grocery",
+        "fruits",
+        "Drinks"
+      ]
+    },
+    {
+      "name": "Pharmacy",
+      "subcategory": [
+        "community pharmacy",
+        "hospital pharmacy",
+        "clinical pharmacy",
+        "regulatory pharmacy",
+        "industrial pharmacy"
+      ]
+    },
+    {
+      "name": "Restaurants",
+      "subcategory": [
+        "Fast Food",
+        "Cafe",
+        "Diner",
+        "Grill",
+        "Food Truck"
+      ]
+    },
+    {
+      "name": "Stationery",
+      "subcategory": [
+        "Sticky Notes",
+        "Full Color Notes",
+        "Calendars",
+        "pens"
+      ]
+    },
+    {
+      "name": "bakery & sweets",
+      "subcategory": [
+        "Cakes",
+        "Bread",
+        "Muffins",
+        "Cookies",
+        "Croissants"
+      ]
+    },
+    {
+      "name": "Ride",
+      "subcategory": [
+        "Car",
+        "motorcycle"
+      ]
+    },
+    {
+      "name": "Train Tickets",
+      "subcategory": [
+        "EC",
+        "1AC",
+        "CC"
+      ]
+    }
+  ]
+}
