@@ -1,5 +1,6 @@
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/controllers/auth_controller.dart';
+import 'package:emart_seller/views/auth_screen/signup_screen.dart';
 import 'package:emart_seller/views/home_screen/home.dart';
 import 'package:emart_seller/widgets/our_button.dart';
 import 'package:emart_seller/widgets/text_style.dart';
@@ -74,15 +75,32 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     10.heightBox,
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: normalText(
-                          text: forgotPassword,
-                          color: purpleColor,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: TextButton(
+                            onPressed: () {},
+                            child: normalText(
+                              text: forgotPassword,
+                              color: purpleColor,
+                            ),
+                          ),
                         ),
-                      ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextButton(
+                            onPressed: () {
+                              Get.to(() => const SignupScreen());
+                            },
+                            child: normalText(
+                              text: "Click here to SignUp",
+                              color: purpleColor,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     20.heightBox,
                     SizedBox(

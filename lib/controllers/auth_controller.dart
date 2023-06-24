@@ -1,7 +1,5 @@
 import 'package:emart_seller/const/const.dart';
 
-import '../const/firebase_const.dart';
-
 class AuthController extends GetxController {
   var isLoading = false.obs;
 
@@ -9,6 +7,9 @@ class AuthController extends GetxController {
 
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+
+  var nameController = TextEditingController();
+  var passwordRetypeController = TextEditingController();
 
   ///login method
 
